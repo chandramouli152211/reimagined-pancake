@@ -21,7 +21,7 @@ def planjourney():
     WebDriverWait(driver,60).until(EC.presence_of_element_located((By.name,'jpform:fromStation'))).send_keys(FROM_STATION)
     browser.find_element_by_id('jpform:toStation').send_keys(TO_STATION)
     browser.find_element_by_id('jpform:journeyDateInputDate').send_keys(DATE)
-    waituntil('09:59:50')
+    waituntil('10:59:50')
     browser.find_element_by_id('jpform:jpsubmnit').click()
     WebDriverWait(driver,60).until(EC.presence_of_element_located((By.name,'quota')))[-1].click()
     browser.find_element_by_id('cllink-%s-%s-%s'%(TRAIN_NO,CLASS,CLASS_INDEX)).click()
@@ -49,7 +49,7 @@ def sbi():
 if __name__ = '__main__':
     profile = webdriver.FirefoxProfile()
     profile.set_preference('webdriver.load.strategy', 'unstable')
-    waituntil('09:59:00')
+    waituntil('10:59:00')
     browser = webdriver.Chrome(profile)
     login()
     planjourney()
